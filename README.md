@@ -34,26 +34,6 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
     * Copy over bitcoin.service from repo
     * https://github.com/bustanet/bitcoind_guide/blob/updates/bitcoind.service
 
-```
-[Unit]
-Description=bitcoin
-After=network.target
-
-[Service]
-Type=forking
-User=bitcoin
-Group=bitcoin
-
-Environment=BITCOIN_PID=~/.bitcoin/bitcoin.pid
-Environment=BITCOIN_HOME=~/.bitcoin
-
-ExecStart=/usr/local/bin/bitcoind
-ExecStop=/bin/kill -15 $MAINPID
-
-[Install]
-WantedBy=multi-user.target
-```
-
 
 ## References
 1. https://bitcoin.org/en/full-node#linux-instructions
