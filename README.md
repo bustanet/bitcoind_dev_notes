@@ -2,8 +2,7 @@
 Heres my guide to setting up a secure bitcoin core and lightning node. 
 
 # bitcoind_guide
-1. Bitcoin Core installation Guide.
-    * https://bitcoin.org/en/full-node#linux-instructions
+1. Bitcoin Core installation Guide. <sup>[1](#references)</sup>
 
 2. Configure SSH and Google Authenticator for remote management. 
     * https://www.rosehosting.com/blog/how-to-set-up-multi-factor-authentication-for-ssh-on-ubuntu-20-04/
@@ -50,3 +49,7 @@ WantedBy=multi-user.target
 1. test
     * test1
     * test2
+
+
+## References
+1.  https://bitcoin.org/en/full-node#linux-instructions
