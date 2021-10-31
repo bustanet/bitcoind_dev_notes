@@ -8,7 +8,7 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
 
 3. Create non-priviledged account for bitcoin daemon.
     * ```sudo useradd -U -r -s /bin/false bitcoin```
-    <details>
+    * <details>
     <summary> Explanation... </summary>
         * -U create group named bitcoin  
         * -r create a system account
