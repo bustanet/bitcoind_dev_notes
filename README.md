@@ -7,6 +7,7 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
 2. Configure SSH and Google Authenticator for remote management. <sup>[2](#references)</sup>
 
 3. Create non-priviledged account for bitcoin daemon.
+
     ```sudo useradd -U -r -s /bin/false bitcoin```
     <details>
     <summary> Click for Explanation </summary>
