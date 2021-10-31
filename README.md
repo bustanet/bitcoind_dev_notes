@@ -34,9 +34,9 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
     * Copy over bitcoin.service from repo
     * https://github.com/bustanet/bitcoind_guide/blob/updates/bitcoind.service
 
-    ```systemctl daemon-reload```
-    ```systemctl enable bitcoind```
-    ```systemctl stop bitcoind```
+    * ```systemctl daemon-reload```
+    * ```systemctl enable bitcoind```
+    * ```systemctl stop bitcoind```
 
 ## References
 1. https://bitcoin.org/en/full-node#linux-instructions
