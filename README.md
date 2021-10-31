@@ -33,7 +33,9 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
 6. Configure bitcoind to start on boot using non priviledged user <sup>[3](#references)</sup>
     * Copy over bitcoin.service from repo
     * https://github.com/bustanet/bitcoind_guide/blob/updates/bitcoind.service
-
+    ```systemctl daemon-reload```
+    ```systemctl enable bitcoind```
+    ```systemctl stop bitcoind```
 
 ## References
 1. https://bitcoin.org/en/full-node#linux-instructions
