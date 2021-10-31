@@ -7,9 +7,9 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
 2. Configure SSH and Google Authenticator for remote management. <sup>[2](#references)</sup>
 
 3. Create non-priviledged account for bitcoin daemon.
-    * ```sudo useradd -U -r -s /bin/false bitcoin```
+    ```sudo useradd -U -r -s /bin/false bitcoin```
     <details>
-    * <summary> ```sudo useradd -U -r -s /bin/false bitcoin```</summary>
+    * <summary> Click for Explanation </summary>
         * -U create group named bitcoin  
         * -r create a system account
         > System users will be created with no aging information in /etc/shadow, and their numeric identifiers are chosen in the SYS_UID_MIN–SYS_UID_MAX range, defined in /etc/login.defs, instead of UID_MIN–UID_MAX (and their GID counterparts for the creation of groups).
