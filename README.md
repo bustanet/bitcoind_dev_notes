@@ -23,9 +23,11 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
     </summary>
 
 4. Make new user/group the owner of the bitcoin binary and working directory (I had to do the latter because I synced the blockchain in my regular user home directory before deciding to secure bitcoind.  Otherwise I would have created a single system wide directory with all the bitcoin files. Also my hard drive isn't big enough to move the blockchain data.)
+
     ```sudo chown -R bitcoin: /usr/local/bin/bitcoind ~/.bitcoin``` 
 
 5. Disable GUI. (I downloaded ubuntu desktop so I have the option of using bitcoind with a GUI if I wanted. I choose to have the GUI disabled unless explicitly using this feature.)
+
     ```sudo systemctl set-default multi-user```
 
 6. Configure bitcoind to start on boot using non priviledged user
