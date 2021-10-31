@@ -30,8 +30,7 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
 
     ```sudo systemctl set-default multi-user```
 
-6. Configure bitcoind to start on boot using non priviledged user
-* https://bitcoin.stackexchange.com/questions/13795/ubuntu-linux-how-do-i-start-bitcoind-as-a-service-to-run-automatically#:~:text=To%20start%20bitcoind%20%2C%20run%20sudo,bitcoind%20%2C%20run%20sudo%20stop%20bitcoind%20.
+6. Configure bitcoind to start on boot using non priviledged user <sup>[3](#references)</sup>
     * Copy over bitcoin.service from repo
     * https://github.com/bustanet/bitcoind_guide/blob/updates/bitcoind.service
 
@@ -56,11 +55,7 @@ WantedBy=multi-user.target
 ```
 
 
-1. test <sup>test sup</sup>
-    * test1
-    * test2
-
-
 ## References
 1. https://bitcoin.org/en/full-node#linux-instructions
 2. https://www.rosehosting.com/blog/how-to-set-up-multi-factor-authentication-for-ssh-on-ubuntu-20-04/
+3. https://bitcoin.stackexchange.com/questions/13795/ubuntu-linux-how-do-i-start-bitcoind-as-a-service-to-run-automatically#:~:text=To%20start%20bitcoind%20%2C%20run%20sudo,bitcoind%20%2C%20run%20sudo%20stop%20bitcoind%20.
