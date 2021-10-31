@@ -10,9 +10,8 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
 
 3. Create non-priviledged account for bitcoin daemon.
 - ```sudo useradd -U -r -s /bin/false bitcoin```
-
-    -U create group named bitcoin
-    -r create a system account
+- U create group named bitcoin
+- r create a system account
 
     > System users will be created with no aging information in /etc/shadow, and their numeric identifiers are chosen in the SYS_UID_MIN–SYS_UID_MAX range, defined in /etc/login.defs, instead of UID_MIN–UID_MAX (and their GID counterparts for the creation of groups).
 
