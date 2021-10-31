@@ -1,0 +1,17 @@
+[Unit]
+Description=bitcoin
+After=network.target
+
+[Service]
+Type=forking
+User=bitcoin
+Group=bitcoin
+
+Environment=BITCOIN_PID=~/.bitcoin/bitcoin.pid
+Environment=BITCOIN_HOME=~/.bitcoin
+
+ExecStart=/usr/local/bin/bitcoin/bitcoind
+ExecStop=/bin/kill -15 $MAINPID
+
+[Install]
+WantedBy=multi-user.target
