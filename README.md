@@ -77,6 +77,7 @@ git clone https://github.com/bitcoin/bitcoin.git
 
 
 # Install Dependencies
+sudo apt-get update
 sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-test-dev libboost-thread-dev
 sudo apt-get install -y libsqlite3-dev
 sudo apt-get install -y libminiupnpc-dev
