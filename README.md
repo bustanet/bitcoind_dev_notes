@@ -63,8 +63,19 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
 5. https://www.digitalocean.com/community/tutorials/how-to-set-up-multi-factor-authentication-for-ssh-on-ubuntu-16-04
 
 
-# Commands
+# Just the commands Commands
+
+## Compiling Bitcoin From Source
+
 ```
+# Create staging area
+mkdir -p ~/code && cd ~/code
+cd ~/code
+
+# Clone Bitcoin Repo
+git clone https://github.com/bitcoin/bitcoin.git
+
+
 # Install Dependencies
 sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-test-dev libboost-thread-dev
 sudo apt-get install -y libsqlite3-dev
@@ -81,18 +92,26 @@ cd ~/code/bitcoin
 cd ~/code/bitcoin
 git checkout tags/v22.0
 ./autogen.sh
-export BDB_PREFIX='/home/tony/code/bitcoin/db4'
+export BDB_PREFIX='/home/$USER/code/bitcoin/db4'
 ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include"
 make
 sudo make install
 
 
-# Setup Bitcoin as a Service Bitcoin
+## Setup Bitcoin as a Service Bitcoin
+
 cd ~/code
+
+# Clone My Bitcoin Config Files
 git clone https://github.com/bustanet/bitcoind_guide
 
+# Create a special user to run the bitcoin daemon
 sudo useradd -U -r -s /bin/false bitcoin
-sudo mkdir /var/lib/bitcoind /etc/bitcoin
+
+# Create necessary folders
+sudo mkdir /var/lib/bitcoind /etc/bitcoin ~/.bitcoin /run/bitcoind
+
+# Bitcoin deamon requires access to 
 sudo chown bitcoin:bitcoin /var/lib/bitcoind
 sudo chmod 750 /var/lib/bitcoind
 ```
@@ -103,12 +122,7 @@ sudo chmod 750 /var/lib/bitcoind
 ```
 sudo cp bitcoind.service /etc/systemd/system
 sudo cp global.bitcoin.conf /etc/bitcoin/bitcoin.conf
-```
-
-- Change username directory below
-
-```
-sudo cp user.bitcoin.conf ~/<user>/.bitcoin.conf
+sudo cp user.bitcoin.conf ~/.bitcoin/bitcoin.conf
 #sudo cp bitcoin.conf /var/lib/bitcoind
 
 systemctl daemon-reload
