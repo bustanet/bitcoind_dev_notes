@@ -63,7 +63,9 @@ Heres my guide to setting up a secure bitcoin core and lightning node.
 5. https://www.digitalocean.com/community/tutorials/how-to-set-up-multi-factor-authentication-for-ssh-on-ubuntu-16-04
 
 
-## Commands
+# Commands
+```
+# Install Dependencies
 sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-test-dev libboost-thread-dev
 sudo apt-get install -y libsqlite3-dev
 sudo apt-get install -y libminiupnpc-dev
@@ -71,11 +73,11 @@ sudo apt-get install -y libzmq3-dev
 sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
 sudo apt-get install -y libqrencode-dev
 
-### Install DB4
+# Install DB4
 cd ~/code/bitcoin
 ./contrib/install_db4.sh `pwd`
 
-### Install Bitcoin
+# Install Bitcoin
 cd ~/code/bitcoin
 git checkout tags/v22.0
 ./autogen.sh
@@ -84,24 +86,35 @@ export BDB_PREFIX='/home/tony/code/bitcoin/db4'
 make
 sudo make install
 
-### Setup Bitcoin as a Service Bitcoin
+
+# Setup Bitcoin as a Service Bitcoin
 cd ~/code
 git clone https://github.com/bustanet/bitcoind_guide
-
 
 sudo useradd -U -r -s /bin/false bitcoin
 sudo mkdir /var/lib/bitcoind /etc/bitcoin
 sudo chown bitcoin:bitcoin /var/lib/bitcoind
 sudo chmod 750 /var/lib/bitcoind
+```
 
+- Update password in global.bitcoin.conf
+- Update password in user.bitcoin.conf
+
+```
 sudo cp bitcoind.service /etc/systemd/system
-sudo cp bitcoin.conf /etc/bitcoin 
-sudo cp bitcoin.conf /var/lib/bitcoind
+sudo cp global.bitcoin.conf /etc/bitcoin/bitcoin.conf
+```
+
+- Change username directory below
+
+```
+sudo cp user.bitcoin.conf ~/<user>/.bitcoin.conf
+#sudo cp bitcoin.conf /var/lib/bitcoind
 
 systemctl daemon-reload
 systemctl start bitcoind
 
-
+```
 
 
 systemctl enable bitcoind
