@@ -18,10 +18,10 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/bitcoin/bitcoind -daemon\
+ExecStart=/usr/local/bin/bitcoind -daemon\
                             -pid=/run/bitcoind/bitcoind.pid \
                             -conf=/etc/bitcoin/bitcoin.conf \
-                            -datadir=/home/tony/.bitcoin
+                            -datadir=/var/lib/bitcoind
 
 # Make sure the config directory is readable by the service user
 PermissionsStartOnly=true
