@@ -55,6 +55,7 @@ sudo chmod 750 /var/lib/bitcoind
 - Update password in user.bitcoin.conf . Any user that interacts with bitcoin-cli will need the password from the global bitcoin.conf stored in their local bitcoin.conf. 
 
 ```
+cd ~/code/bitcoind_guide
 sudo cp bitcoind.service /etc/systemd/system
 sudo cp global.bitcoin.conf /etc/bitcoin/bitcoin.conf
 sudo cp user.bitcoin.conf ~/.bitcoin/bitcoin.conf
@@ -68,7 +69,7 @@ systemctl start bitcoind
 
 
 
-# bitcoind_guide
+# Details
 1. Bitcoin Core installation Guide. <sup>[1](#references)[4](#references)</sup>
 
 2. Configure SSH and Google Authenticator for remote management. <sup>[2][5](#references)</sup>
