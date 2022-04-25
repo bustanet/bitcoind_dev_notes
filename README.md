@@ -67,6 +67,24 @@ systemctl start bitcoind
 ```
 
 
+# Addtional Development Environment Commands
+
+
+```
+sudo apt-get install clang gcc python3 systemtap
+
+# Install Boost Libraries
+cd ~/code
+mkdir boost
+cd boost
+wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+tar --bzip2 -xf boost_1_77_0.tar.bz2
+./bootstrap.sh --prefix=/usr/local/boost_1_77_0
+./b2 install
+```
+
+
+
 
 
 # Details
