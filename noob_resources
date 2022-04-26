@@ -1,0 +1,13 @@
+# 
+Recommend reading resources are sprinkled throughout the bitcoin git documentations. This page aims to be a consolidated guide to that information. 
+
+https://bitcoincore.reviews/
+Read the Contributing to Bitcoin Core Guide. This will help you understand the process and some of the terminology we use in Bitcoin Core.
+Look at the Good First Issues and Up For Grabs list.
+Read the Bitcoin Core Developer Notes and Productivity Tips.
+Brush up on your C++. There are many primers and reference manuals available.
+There are some excellent blog posts on how to start contributing to Bitcoin Core:
+A Gentle Introduction to Bitcoin Core Development (Jimmy Song)
+Contributing to Bitcoin Core - a Personal Account (John Newbery)
+Onboarding to Bitcoin Core (Amiti Uttarwar)
+How to Review Pull Requests in Bitcoin Core (Jon Atack)
