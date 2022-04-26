@@ -11,15 +11,15 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config b
 <details>
   <summary>What do these tools do?</summary>
   
-- build-essentials: This is a meta package (package that links to multiple other packages) that is necessary for compiling C and C++ programs. The list of actually packages may differ from OS to OS, but for Ubuntu 20.04 using apt-get the packages it contains are: dpkg-dev, g++, gcc, libc6-dev, make. The details for these packages can be found [here](https://packages.ubuntu.com/focal/build-essential). 
+- build-essentials - This is a meta package (package that links to multiple other packages) that is necessary for compiling C and C++ programs. The list of actually packages may differ from OS to OS, but for Ubuntu 20.04 using apt-get the packages it contains are: dpkg-dev, g++, gcc, libc6-dev, make. The details for these packages can be found [here](https://packages.ubuntu.com/focal/build-essential). 
 
-- libtool, autotools-dev, automake: [From the docs](https://www.star.bnl.gov/~liuzx/autobook.html): *"Autoconf, Automake, and Libtool were developed separately, to make tackling the problem of software configuration more manageable by partitioning it. But they were designed to be used as a system, and they make more sense when you have documentation for the whole system."* This excerpt is from an entire book dedicated to documenting the history of how these tools became the foundations for C software development. 
+- libtool, autotools-dev, automake - [From the docs](https://www.star.bnl.gov/~liuzx/autobook.html): *"Autoconf, Automake, and Libtool were developed separately, to make tackling the problem of software configuration more manageable by partitioning it. But they were designed to be used as a system, and they make more sense when you have documentation for the whole system."* This excerpt is from an entire book dedicated to documenting the history of how these tools became the foundations for C software development. 
 
-- pkg-config: [From the docs](https://www.freedesktop.org/wiki/Software/pkg-config) From the docs: *"pkg-config is a helper tool used when compiling applications and libraries. It helps you insert the correct compiler options on the command line so an application can use gcc -o test test.c `pkg-config --libs --cflags glib-2.0` for instance, rather than hard-coding values on where to find glib (or other libraries)."*
+- pkg-config - [From the docs](https://www.freedesktop.org/wiki/Software/pkg-config): *"pkg-config is a helper tool used when compiling applications and libraries. It helps you insert the correct compiler options on the command line so an application can use gcc -o test test.c `pkg-config --libs --cflags glib-2.0` for instance, rather than hard-coding values on where to find glib (or other libraries)."*
 
-- bsdmainutils: [From the docs]() *"collection of more utilities from FreeBSD This package contains lots of small programs many people expect to find when they use a BSD-style Unix system."* I have not discovered why a package like this would be required, if anyone knows, please reach out to me. 
+- bsdmainutils - [From the docs]() *"collection of more utilities from FreeBSD This package contains lots of small programs many people expect to find when they use a BSD-style Unix system."* I have not discovered why a package like this would be required, if anyone knows, please reach out to me. 
 
-- python3: Certain features, such as ZMQ are built with python. It also appears some CI testing functions utilze python as well. 
+- python3 - Certain features, such as ZMQ are built with python. It also appears some CI testing functions utilze python as well. 
 
 </details> 
 
@@ -27,9 +27,10 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config b
 ```sudo apt-get install libevent-dev libboost-dev```
 <details>
   <summary> What do these tools do?</summary>
-  - libevent-dev: [from the docs](https://libevent.org/) *"The libevent API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. Furthermore, libevent also support callbacks due to signals or regular timeouts."*
   
-  - libboost-dev: [from the docs](https://www.boost.org/users/) *"In a word, Productivity. Use of high-quality libraries like Boost speeds initial development, results in fewer bugs, reduces reinvention-of-the-wheel, and cuts long-term maintenance costs. And since Boost libraries tend to become de facto or de jure standards, many programmers are already familiar with them."*
+  - libevent-dev - [from the docs](https://libevent.org/) *"The libevent API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. Furthermore, libevent also support callbacks due to signals or regular timeouts."*
+  
+  - libboost-dev - [from the docs](https://www.boost.org/users/) *"In a word, Productivity. Use of high-quality libraries like Boost speeds initial development, results in fewer bugs, reduces reinvention-of-the-wheel, and cuts long-term maintenance costs. And since Boost libraries tend to become de facto or de jure standards, many programmers are already familiar with them."*
 </details>
 
 There are two ways to control your dependencies: 
