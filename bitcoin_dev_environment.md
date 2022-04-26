@@ -20,11 +20,12 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config b
 - python3: Certain features, such as ZMQ are built with python. It also appears some CI testing functions utilze python as well. 
 
 ## Dependency Requirements
-There are basically three levels in which you can build your dev environment (choose one): 
+There are a couple of ways in which you can build your dev environment (choose one): 
 
 | Level | Instructions | Rationale |
-| --- | ---------------- | - |
-| 1 | ```sudo apt-get install libevent-dev libboost-dev```| This is the simplest, but also gives you the most flexibility as it lets you "control" your dependencies. You can choose to install the required dependencies through a package manager (as seen here) or your can install them some other way, such as building them from source. | 
+| :---: | --- | --- |
+| Most Control | ```sudo apt-get install libevent-dev libboost-dev```| This is the simplest, but also gives you the most flexibility as it lets you "control" your dependencies. You can choose to install the required dependencies through a package manager (as seen here) or your can install them some other way, such as building them from source. | 
+| Least Conrol | words | The commands here are explicitly spelled out in the unix build instructions and it is left up to the developer to have knowledge of how to build these dependencies, so I consider it a bit more challengeing. Having that said, this provides less control over the your dependencies because you are using the lib versions and that have been predefined. |
 
 ```
 
