@@ -23,7 +23,7 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config b
 There are basically three levels in which you can build your dev environment (choose one): 
 
 | Level | Instructions | Rationale |
-| --- | ---------------- | --- |
+| --- | ---------------- | - |
 | 1 | ```sudo apt-get install libevent-dev libboost-dev```| This is the simplest, but also gives you the most flexibility as it lets you "control" your dependencies. You can choose to install the required dependencies through a package manager (as seen here) or your can install them some other way, such as building them from source. | 
 
 ```
