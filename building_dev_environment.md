@@ -5,9 +5,7 @@ I wanted to provide additional context for the novice (such as myself) as to wha
 
 ## Configuring Development Environment
 ### Build Requirements
-```
-sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
-```
+```sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3```
 <details>
   <summary>What do these tools do?</summary>
   
