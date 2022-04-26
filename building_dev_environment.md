@@ -27,13 +27,15 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config b
 ```sudo apt-get install libevent-dev libboost-dev```
 <details>
   <summary> What do these tools do?</summary>
+  - libevent-dev: [from the docs](https://libevent.org/) *"The libevent API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. Furthermore, libevent also support callbacks due to signals or regular timeouts."*
   
+  - libboost-dev: [from the docs](https://www.boost.org/users/) *"In a word, Productivity. Use of high-quality libraries like Boost speeds initial development, results in fewer bugs, reduces reinvention-of-the-wheel, and cuts long-term maintenance costs. And since Boost libraries tend to become de facto or de jure standards, many programmers are already familiar with them."*
 </details>
 
 There are two ways to control your dependencies: 
 - More Control: This is actually the simpler of the two and is what is used above in this section. It gives you the most flexibility as it lets you "control" your dependencies. You can choose to install the required dependencies through a package manager, like above, or your can install them some other way, such as building them from source. 
 
-- Less Control: The other way is to follow the [dependency instructions](https://github.com/bitcoin/bitcoin/blob/master/depends/README.md) page, which will use the lib versions and installation instructions that have been predefined. 
+- Less Control: The other way is to follow the [dependency instructions](https://github.com/bitcoin/bitcoin/blob/master/depends/README.md) page, which will use the lib versions and build instructions that have been predefined in the bitcoin-core depends scripts. 
 
 
 
