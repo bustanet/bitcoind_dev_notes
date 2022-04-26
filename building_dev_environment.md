@@ -10,6 +10,7 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config b
 ```
 <details>
   <summary>What do these tools do?</summary>
+  
 - build-essentials: This is a meta package (package that links to multiple other packages) that is necessary for compiling C and C++ programs. The list of actually packages may differ from OS to OS, but for Ubuntu 20.04 using apt-get the packages it contains are: dpkg-dev, g++, gcc, libc6-dev, make. The details for these packages can be found [here](https://packages.ubuntu.com/focal/build-essential). 
 
 - libtool, autotools-dev, automake: [From the docs](https://www.star.bnl.gov/~liuzx/autobook.html): *"Autoconf, Automake, and Libtool were developed separately, to make tackling the problem of software configuration more manageable by partitioning it. But they were designed to be used as a system, and they make more sense when you have documentation for the whole system."* This excerpt is from an entire book dedicated to documenting the history of how these tools became the foundations for C software development. 
