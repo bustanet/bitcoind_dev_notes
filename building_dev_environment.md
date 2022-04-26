@@ -1,10 +1,10 @@
-# A novice's guide to building a bitcoin core dev environment on Ubuntu
-The following instructions follow the **Unix Build Notes** located at [bitcoin/doc/build-unix.md](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md) of the source code. 
+# A novice's guide to beginning bitcoin-core development on Ubuntu
+The following instructions follow the **Unix Build Notes** located at [bitcoin/doc/build-unix.md](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md) of the bitcoin-core source code. 
 
 I wanted to provide additional context for the novice (such as myself) as to what all of the compoenent parts are. The following instructions were exected on a docker container running the official ubuntu 20.04 image. 
 
-
-## Build Requirements
+## Configuring Development Environment
+### Build Requirements
 ```
 sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
 ```
@@ -23,7 +23,7 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config b
 
 </details> 
 
-## Dependency Requirements
+### Dependency Requirements
 ```sudo apt-get install libevent-dev libboost-dev```
 <details>
   <summary> What do these tools do?</summary>
@@ -38,5 +38,85 @@ There are two ways to control your dependencies:
 
 - Less Control: The other way is to follow the [dependency instructions](https://github.com/bitcoin/bitcoin/blob/master/depends/README.md) page, which will use the lib versions and build instructions that have been predefined in the bitcoin-core depends scripts. 
 
+This is everything you need for a basic bitcoin-core build. The rest of the dependencies below are to implement additional features. 
+
+### Addtional Feature Requirements (optional)
+
+```
+# Descriptor Wallet
+sudo apt install libsqlite3-dev
+
+# Port Mapping
+sudo apt install libminiupnpc-dev libnatpmp-dev
+
+# ZMQ
+sudo apt-get install libzmq3-dev
+
+# USDT
+sudo apt install systemtap-sdt-dev
+
+# GUI - I am not compiling the GUI portion. I may come back to this at a later point. 
+```
+<details>
+  <summary>What are these features</summary>
+  
+  - Descriptor Wallet: There are two types of bitcoin wallet, an old **legacy wallet** and a new **descriptor wallet**. Sqlite is required to use the new descriptor wallet. 
+  
+  - Port Mapping:  used to autoconfigure open ports one gateway router. 
+  
+  - ZMQ: TODO
+  
+  - USDT: TODO
+  
+  - GUI: bitcoin-core can be operated from the command line or from a gui. 
+</details>
+
+## Building Bitcoind
+Now with all the dependencies installed, we can copy down the source code from git and compile bitcoin-core. 
+```
+git clone https://github.com/bitcoin/bitcoin.git
+cd bitcoin
+./autogen.sh 
+./configure
+make # use "-j N" for N parallel jobs
+make install # optional
+```
+<details>
+  <summary> What do these commands do?</summary>
+  
+  [Here](https://devmanual.gentoo.org/general-concepts/autotools/index.html) is a great visual and explanation of how these tools work together. 
+  - autogen.sh: This script performs a number of feature checks to determine what your operating environment looks like. As an example, if you 
+</details>
+  
+
+
+## Units Testing
+
+## Git Workflow
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Just the Commands
+```
+#Build Requirements Dependencies
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config bsdmainutils python3
+
+#Dependency Requirements
+sudo apt-get install libevent-dev libboost-dev
+
+# Productivity
+sudo apt-get install ccache
+
+```
 
 
