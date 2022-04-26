@@ -22,10 +22,10 @@ sudo apt-get install build-essential libtool autotools-dev automake pkg-config b
 ## Dependency Requirements
 There are a couple of ways in which you can build your dev environment (choose one): 
 
-| Level | Instructions | Rationale |
+| Level | Commands | Rationale |
 | :---: | --- | --- |
-| Most Control | ```sudo apt-get install libevent-dev libboost-dev```| This is the simplest, but also gives you the most flexibility as it lets you "control" your dependencies. You can choose to install the required dependencies through a package manager (as seen here) or your can install them some other way, such as building them from source. | 
-| Least Conrol | ```This section is confuses me, I'll have to come back to it. ``` | The commands here are explicitly spelled out in the unix build instructions and it is left up to the developer to have knowledge of how to build these dependencies, so I consider it a bit more challengeing. Having that said, this provides less control over the your dependencies because you are using the lib versions that have been predefined. |
+| Most Control - Install your own dependencies | ```sudo apt-get install libevent-dev libboost-dev```| This is the simplest, but also gives you the most flexibility as it lets you "control" your dependencies. You can choose to install the required dependencies through a package manager (as seen here) or your can install them some other way, such as building them from source. | 
+| Least Conrol - Use predefined dependencies | ```I dont fully understand this process, I'll have to come back to it. ``` | The commands here are explicitly spelled out in the unix build instructions and it is left up to the developer to have knowledge of how to build these dependencies, so I consider it a bit more challengeing. Having that said, this provides less control over the your dependencies because you are using the lib versions that have been predefined. |
 
 
 
