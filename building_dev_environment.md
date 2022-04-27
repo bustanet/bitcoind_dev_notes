@@ -90,6 +90,7 @@ make install # optional
 </details>
   
 **Stucture** 
+
 To keep things organized, my have my project folder structured as follows: 
 
 bitcoin
