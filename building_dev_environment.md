@@ -83,12 +83,54 @@ make install # optional
   <summary> What do these commands do?</summary>
   
   [Here](https://devmanual.gentoo.org/general-concepts/autotools/index.html) is a great visual and explanation of how these tools work together. 
-  - autogen.sh: This script performs a number of feature checks to determine what your operating environment looks like. As an example, if you 
+  - ```./autogen.sh``` runs a series of test to learn capabilites are available in your environment. Its output is a configure script. 
+  - ```./configure``` utilizes the output from autogen to configure settings for the build environment. Itt output is a make file.
+  - ```make``` uses all the instructions from the makefile created by ./configure. This command does all of the binary compulation. 
+  - ```make install``` puts the binary executables into their final destination. 
 </details>
   
+**Stucture** 
+To keep things organized, my have my project folder structured as follows: 
+
+bitcoin
+    | -----source <- this is where the bitcoin source code gets stored.
+    | -----build  <- this is where the build files created by ```./configure``` are stored.
+    | -----deploy <- this is where the final install files from ```./make install``` are stored.
+    
+Revisiting the build instructions again, I run all of these commands from inside the build folder, but keep in mind that autoconf and configure are scripts located in the source code folder, so you will need to provide the path to them. It doesn't appear to matter which directory you are in when you run the autoconf, but without any additional options, configure will output the build files in the directory you are in. Here are the parameters I am using. 
+
+```
+./autogen.sh
+
+./configure --without-miniupnpc \
+--without-natpmp \
+--disable-bench \
+--disable-wallet \
+--without-gui \ 
+--prefix=../deploy
+
+make -j"$(($(nproc)+1))
+
+make install 
+```
+
+The additional options here are the suggested parameters to expedite compilation, details can be found [here](https://github.com/bitcoin/bitcoin/blob/master/doc/productivity.md). 
+
 
 
 ## Units Testing
+Unit test instructions can be found [here](https://github.com/bitcoin/bitcoin/blob/master/src/test/README.md). Unit tests are built in c++ and are located in src/test. They are compiled when bitcoin-core is built and can be run with the test_bitcoin binary. Without any options test_bitcoin will run all tests, alternatively you can select a specific test. The test names are same as their source code name without the ```.cpp``` extension. Note that without setting the log level, there wont be any output and it will only notify you upon completion. 
+
+```
+# Run all unit tests
+./test_bitcoin --log_level=all
+
+# Run specific test
+./test_bitcoin --log_level=all --run_test=getarg_tests
+
+# Get help, such as see what the different log levels are
+./test_bitcoin --help
+```
 
 ## Git Workflow
 
