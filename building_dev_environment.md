@@ -92,12 +92,12 @@ make install # optional
 **Stucture** 
 
 To keep things organized, my have my project folder structured as follows: 
-
+```
 bitcoin
     | -----source <- this is where the bitcoin source code gets stored.
     | -----build  <- this is where the build files created by ```./configure``` are stored.
     | -----deploy <- this is where the final install files from ```./make install``` are stored.
-    
+ ```   
 Revisiting the build instructions again, I run all of these commands from inside the build folder, but keep in mind that autoconf and configure are scripts located in the source code folder, so you will need to provide the path to them. It doesn't appear to matter which directory you are in when you run the autoconf, but without any additional options, configure will output the build files in the directory you are in. Here are the parameters I am using. 
 
 ```
