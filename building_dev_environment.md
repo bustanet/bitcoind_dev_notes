@@ -15,7 +15,7 @@ I wanted to provide additional context for the novice (such as myself) as to wha
 
 - pkg-config - [From the docs](https://www.freedesktop.org/wiki/Software/pkg-config): *"pkg-config is a helper tool used when compiling applications and libraries. It helps you insert the correct compiler options on the command line so an application can use gcc -o test test.c `pkg-config --libs --cflags glib-2.0` for instance, rather than hard-coding values on where to find glib (or other libraries)."*
 
-- bsdmainutils - [From the docs]() *"collection of more utilities from FreeBSD This package contains lots of small programs many people expect to find when they use a BSD-style Unix system."* I have not discovered why a package like this would be required, if anyone knows, please reach out to me. 
+- bsdmainutils - [From the docs]() *"collection of more utilities from FreeBSD This package contains lots of small programs many people expect to find when they use a BSD-style Unix system."* 
 
 - python3 - Certain features, such as ZMQ are built with python. It also appears some CI testing functions utilze python as well. 
 
@@ -119,7 +119,11 @@ The additional options here are the suggested parameters to expedite compilation
 
 
 
-## Units Testing
+## Testing
+
+### Unit Tests
+Unit testing tests individual components of the bitcoin code. 
+
 Unit test instructions can be found [here](https://github.com/bitcoin/bitcoin/blob/master/src/test/README.md). Unit tests are built in c++ and are located in src/test. They are compiled when bitcoin-core is built and can be run with the test_bitcoin binary. Without any options test_bitcoin will run all tests, alternatively you can select a specific test. The test names are same as their source code name without the ```.cpp``` extension. Note that without setting the log level, there wont be any output and it will only notify you upon completion. 
 
 ```
@@ -132,6 +136,15 @@ Unit test instructions can be found [here](https://github.com/bitcoin/bitcoin/bl
 # Get help, such as see what the different log levels are
 ./test_bitcoin --help
 ```
+
+### Integration Tests
+Integration tests test several bitcoin core components together. 
+
+Integration testing instructions can be found [here](https://github.com/bitcoin/bitcoin/tree/master/test). Integration tests require python zmq: 
+
+```sudo apt-get install python3-zmq```
+
+
 
 ## Git Workflow
 
@@ -160,4 +173,7 @@ sudo apt-get install ccache
 
 ```
 
+# Questions
+- Whats the difference between the unit tests run with ```make check``` and ```test bitcoin```.
+- Why part of bitcoin core uses **bsdmainutils**? What functionality does it provide that native linux does not? 
 
