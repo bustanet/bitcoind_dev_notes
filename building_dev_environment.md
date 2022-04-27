@@ -89,7 +89,7 @@ make install # optional
   - ```make install``` puts the binary executables into their final destination. 
 </details>
   
-**Stucture** 
+**Structure** 
 
 To keep things organized, I have my project folder structured as follows: 
 ```
@@ -101,14 +101,9 @@ bitcoin
 Revisiting the build instructions again, I run all of these commands from inside the build folder, but keep in mind that autoconf and configure are scripts located in the source code folder, so you will need to provide the path to them. It doesn't appear to matter which directory you are in when you run the autoconf, but without any additional options, configure will output the build files in the directory you are in. Here are the parameters I am using. 
 
 ```
-./autogen.sh
+../autogen.sh
 
-./configure --without-miniupnpc \
---without-natpmp \
---disable-bench \
---disable-wallet \
---without-gui \ 
---prefix=../deploy
+../source/configure --without-miniupnpc --without-natpmp --disable-bench --disable-wallet --without-gui --prefix=/root/bitcoin/deploy
 
 make -j"$(($(nproc)+1))
 
@@ -120,6 +115,16 @@ The additional options here are the suggested parameters to expedite compilation
 
 
 ## Testing
+Before running units tests, the [productivity guide](https://github.com/bitcoin/bitcoin/blob/master/doc/productivity.md) recommends setting up a ramdisk as follows: 
+
+```
+sudo mkdir -p /mnt/tmp
+sudo mount -t tmpfs -o size=4g tmpfs /mnt/tmp/
+```
+
+I am implementing this in a docker environment. In order to add a ramdisk to your docker container, add the following to your docker run command: 
+
+```--tmpfs /mnt/tmp:rw,size=4g ```
 
 ### Unit Tests
 Unit testing tests individual components of the bitcoin code. 
