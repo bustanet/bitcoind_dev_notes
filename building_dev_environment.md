@@ -83,15 +83,15 @@ make install # optional
   <summary> What do these commands do?</summary>
   
   [Here](https://devmanual.gentoo.org/general-concepts/autotools/index.html) is a great visual and explanation of how these tools work together. 
-  - ```./autogen.sh``` runs a series of test to learn capabilites are available in your environment. Its output is a configure script. 
-  - ```./configure``` utilizes the output from autogen to configure settings for the build environment. Itt output is a make file.
+  - ```./autogen.sh``` runs a series of test to learn what capabilites are available in your environment. Its output is a configure script. 
+  - ```./configure``` utilizes the output from autogen to configure settings for the build environment. It output is a make file.
   - ```make``` uses all the instructions from the makefile created by ./configure. This command does all of the binary compulation. 
   - ```make install``` puts the binary executables into their final destination. 
 </details>
   
 **Stucture** 
 
-To keep things organized, my have my project folder structured as follows: 
+To keep things organized, I have my project folder structured as follows: 
 ```
 bitcoin
     | -----source <- this is where the bitcoin source code gets stored.
